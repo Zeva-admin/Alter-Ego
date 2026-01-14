@@ -1,0 +1,89 @@
+/* frontend/src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Тёмная тема */
+html.dark {
+  color-scheme: dark;
+}
+
+/* Глобальные стили */
+body {
+  @apply antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Эффект кнопок */
+.button-glow {
+  transition: all 0.2s ease;
+}
+
+.button-glow:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.18);
+}
+
+.button-glow:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+/* Скроллбар под Discord */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.6);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 160, 160, 0.9);
+}
+
+/* Sidebar фиксированной ширины */
+.sidebar-fixed {
+  width: 16rem;      /* 64 */
+  min-width: 16rem;
+  max-width: 16rem;
+  flex-shrink: 0;
+}
+
+/* Sticky header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Мобильная анимация Sidebar */
+.mobile-sidebar-open {
+  transform: translateX(0) !important;
+}
+
+.mobile-sidebar-closed {
+  transform: translateX(-100%) !important;
+}
+
+/* Исправление для input в светлой теме */
+input {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Исправление для блоков кода */
+pre {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+}
+
+/* Чтобы текст не вылезал за края */
+p {
+  word-break: break-word;
+  white-space: pre-wrap;
+}
